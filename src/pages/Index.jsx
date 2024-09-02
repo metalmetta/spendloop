@@ -12,7 +12,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="container mx-auto p-6">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold text-indigo-900">SpendLoop</h1>
+          <h1 className="text-4xl font-bold text-indigo-900">SpendLoop version2</h1>
           <p className="text-lg text-indigo-700">Streamline Your Expense Management</p>
         </header>
         <Tabs defaultValue="wallet" className="w-full">
