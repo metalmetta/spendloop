@@ -6,7 +6,7 @@ import Cards from '../components/Cards';
 import Reimbursement from '../components/Reimbursement';
 import Invoices from '../components/Invoices';
 import People from '../components/People';
-import Settings from '../components/Settings'; // Import the new Settings component
+import Settings from '../components/Settings'; // Import the new ˝ component
 
 const Index = () => {
   return (
