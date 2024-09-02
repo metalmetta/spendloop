@@ -9,7 +9,9 @@ const Cards = () => {
       </CardHeader>
       <CardContent>
         <p>Your linked cards:</p>
-        {/* Add a list of cards here */}
+        <ul>
+          <li>123455</li>
+        </ul>
       </CardContent>
     </Card>
   );
