@@ -6,6 +6,7 @@ import Cards from '../components/Cards';
 import Reimbursement from '../components/Reimbursement';
 import Invoices from '../components/Invoices';
 import People from '../components/People';
+import Settings from '../components/Settings'; // Import the new Settings component
 
 const Index = () => {
   return (
@@ -16,13 +17,14 @@ const Index = () => {
           <p className="text-lg text-indigo-700">Streamline Your Expense Management</p>
         </header>
         <Tabs defaultValue="wallet" className="w-full">
-          <TabsList className="grid w-full grid-cols-6 bg-white shadow-md rounded-lg mb-6">
+          <TabsList className="grid w-full grid-cols-7 bg-white shadow-md rounded-lg mb-6"> {/* Update grid-cols to 7 */}
             <TabsTrigger value="wallet" className="data-[state=active]:bg-indigo-100 data-[state=active]:text-indigo-900">Wallet</TabsTrigger>
             <TabsTrigger value="expenses" className="data-[state=active]:bg-indigo-100 data-[state=active]:text-indigo-900">Expenses</TabsTrigger>
             <TabsTrigger value="cards" className="data-[state=active]:bg-indigo-100 data-[state=active]:text-indigo-900">Cards</TabsTrigger>
             <TabsTrigger value="reimbursement" className="data-[state=active]:bg-indigo-100 data-[state=active]:text-indigo-900">Reimbursement</TabsTrigger>
             <TabsTrigger value="invoices" className="data-[state=active]:bg-indigo-100 data-[state=active]:text-indigo-900">Invoices</TabsTrigger>
             <TabsTrigger value="people" className="data-[state=active]:bg-indigo-100 data-[state=active]:text-indigo-900">People</TabsTrigger>
+            <TabsTrigger value="settings" className="data-[state=active]:bg-indigo-100 data-[state=active]:text-indigo-900">Settings</TabsTrigger> {/* Add new tab */}
           </TabsList>
           <div className="bg-white shadow-lg rounded-lg p-6">
             <TabsContent value="wallet"><Wallet /></TabsContent>
@@ -31,6 +33,7 @@ const Index = () => {
             <TabsContent value="reimbursement"><Reimbursement /></TabsContent>
             <TabsContent value="invoices"><Invoices /></TabsContent>
             <TabsContent value="people"><People /></TabsContent>
+            <TabsContent value="settings"><Settings /></TabsContent> {/* Add new tab content */}
           </div>
         </Tabs>
       </div>
