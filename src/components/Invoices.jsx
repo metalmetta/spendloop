@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useDropzone } from 'react-dropzone';
+import Tesseract from 'tesseract.js';
 
 const Invoices = () => {
   const [invoices, setInvoices] = useState([]);
@@ -23,14 +24,19 @@ const Invoices = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (newInvoice.description && newInvoice.amount && newInvoice.file) {
-      // Mock OCR function
-      const mockOCR = async (file) => {
-        // In a real application, this would send the file to a backend service for OCR processing
-        console.log('OCR processing file:', file.name);
-        return 'Mocked OCR result';
+      // OCR function using Tesseract.js
+      const performOCR = async (file) => {
+        const result = await Tesseract.recognize(
+          file,
+          'eng',
+          {
+            logger: m => console.log(m)
+          }
+        );
+        return result.data.text;
       };
 
-      const ocrResult = await mockOCR(newInvoice.file);
+      const ocrResult = await performOCR(newInvoice.file);
       
       setInvoices(prev => [...prev, { ...newInvoice, id: Date.now(), ocrResult }]);
       setNewInvoice({ description: '', amount: '', file: null });
